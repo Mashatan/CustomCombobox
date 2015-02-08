@@ -10,7 +10,7 @@ import QtQuick.Controls.Private 1.0
 
 
 Rectangle {
-            width: 300;
+            width: 600;
             height: 400;
             RowLayout{
                 Text {
@@ -104,18 +104,21 @@ Rectangle {
                     }
                     width: 200
                 }
-            }
-            /*EthComboBox
-            {
-                id: functionComboBox
-                currentIndex: 0
-                textRole: "text"
-                editable: false
-                model: ListModel {
-                    id: unitsModel
-                    ListElement { text: "Uether"; image:"image/edit.png" }
-                    ListElement { text: "Vether1"; image:"image/edit.png" }
-                    ListElement { text: "Vether2"; image:"image/edit.png" }
+
+                EthComboBox
+                {
+                    id: functionComboBox
+                    currentIndex: 0
+                    textRole: "text"
+                    editable: false
+                    model: ListModel {
+                        id: unitsModel
+                        ListElement { text: "No Transaction"; image:"image/edit.png" }
+                        ListElement { text: "Sining up first time"; image:"image/edit.png" }
+                        ListElement { text: "Widthdraw from account"; image:"image/edit.png" }
+                        ListElement { text: "Edit State..."; image:"image/edit.png" }
+                    }
                 }
-            }*/
+            }
+
 }
