@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>qml/main.qml</file>
+        <file>qml/image/edit.png</file>
+        <file>qml/EthComboBox.qml</file>
+        <file>qml/EthComboBoxStyle.qml</file>
+    </qresource>
+</RCC>
