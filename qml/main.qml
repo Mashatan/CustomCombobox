@@ -51,16 +51,36 @@ Rectangle {
                             }
 
                             itemDelegate.label:             // an item text
-                                Text {
-                                verticalAlignment: Text.AlignVCenter
-                                horizontalAlignment: Text.AlignHCenter
-                                font.pointSize: 12
-                                font.family: "tahoma"
-                                font.capitalization: Font.SmallCaps
-                                color: styleData.selected ? "white" : "black"
-                                text: styleData.selected ? "<p>"+styleData.text + "<img src=\"qrc:///qml/image/edit.png\"></p>":
-                                                           "<p>"+styleData.text +"</p>"
-                            }
+                                Item {
+                                    height: 50
+                                    id:itemEdit
+                                    anchors.margins: 4
+                                  RowLayout {
+                                      Text {
+                                           verticalAlignment: Text.AlignVCenter
+                                           horizontalAlignment: Text.AlignHCenter
+                                           font.pointSize: 10
+                                           font.family: "tahoma"
+                                           font.capitalization: Font.SmallCaps
+                                           color: styleData.selected ? "white" : "black"
+                                           text: styleData.text
+                                      }
+                                      Image {
+                                          id: imgEdit
+                                          fillMode: Image.PreserveAspectCrop
+                                          source: "image/edit.png"
+                                          visible: styleData.selected
+                                          MouseArea {
+                                              anchors.fill: parent
+                                              anchors.margins: -10
+                                              hoverEnabled: true
+                                              onClicked: {
+                                                  console.log("test click");
+                                              }
+                                          }
+                                      }
+                                  }
+                               }
 
                             itemDelegate.background: Rectangle {  // selection of an item
                                 radius: 2
@@ -97,28 +117,28 @@ Rectangle {
 
                     model: ListModel {
                         id: cbItems
-                        ListElement { text: "No Transaction" }
-                        ListElement { text: "Sining up first time" }
-                        ListElement { text: "Widthdraw from account" }
-                        ListElement { text: "Edit State..." }
+                        ListElement { text: "No Transaction"; idt:false }
+                        ListElement { text: "Sining up first time"; idt:true }
+                        ListElement { text: "Widthdraw from account"; idt:true }
+                        ListElement { text: "Edit State..."; idt:false }
                     }
                     width: 200
                 }
 
-                EthComboBox
-                {
-                    id: functionComboBox
-                    currentIndex: 0
-                    textRole: "text"
-                    editable: false
-                    model: ListModel {
-                        id: unitsModel
-                        ListElement { text: "No Transaction"; image:"image/edit.png" }
-                        ListElement { text: "Sining up first time"; image:"image/edit.png" }
-                        ListElement { text: "Widthdraw from account"; image:"image/edit.png" }
-                        ListElement { text: "Edit State..."; image:"image/edit.png" }
-                    }
-                }
+                //EthComboBox
+                //{
+                //    id: functionComboBox
+                //    currentIndex: 0
+                //    textRole: "text"
+                //    editable: false
+                //    model: ListModel {
+                //        id: unitsModel
+                //        ListElement { text: "No Transaction"; image:"image/edit.png" }
+                //        ListElement { text: "Sining up first time"; image:"image/edit.png" }
+                //        ListElement { text: "Widthdraw from account"; image:"image/edit.png" }
+                //        ListElement { text: "Edit State..."; image:"image/edit.png" }
+                //    }
+                //}
             }
 
 }
