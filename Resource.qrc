@@ -4,5 +4,6 @@
         <file>qml/image/edit.png</file>
         <file>qml/EthComboBox.qml</file>
         <file>qml/EthComboBoxStyle.qml</file>
+        <file>qml/EthCustomComboBox.qml</file>
     </qresource>
 </RCC>
