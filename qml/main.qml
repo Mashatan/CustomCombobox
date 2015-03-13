@@ -6,17 +6,20 @@ import QtQuick 2.0
 import QtQuick.Controls 1.0
 import QtQuick.Layouts 1.1
 import QtQuick.Controls.Styles 1.2
-import QtQuick.Controls.Private 1.0
 
 
 Rectangle {
     width: 600;
     height: 400;
 
-    ColumnLayout {
+    ColumnLayout
+    {
 
         EthCustomComboBox
         {
+            items: ["No Transaction", "Sining up first tim", "Widthdraw from account", "Edit State..."]
+            onSelectItem: console.log("Combobox Select Item: " + item )
+            onEditItem: console.log("Combobox Edit Item: " + item )
 
         }
         Rectangle {
@@ -158,5 +161,4 @@ Rectangle {
                 }
 
             }*/
-
 }
