@@ -14,13 +14,28 @@ Rectangle {
 
     ColumnLayout
     {
-
-        EthCustomComboBox
+        RowLayout
         {
-            items: ["No Transaction", "Sining up first tim", "Widthdraw from account", "Edit State..."]
-            onSelectItem: console.log("Combobox Select Item: " + item )
-            onEditItem: console.log("Combobox Edit Item: " + item )
 
+            Text
+            {
+                text:"Select items:"
+            }
+
+            EthCustomComboBox
+            {
+                items: ListModel {
+                    ListElement{ itemName: "No Transaction" }
+                    ListElement{ itemName: "Sining up first tim" }
+                    ListElement{ itemName: "Widthdraw from account" }
+                    ListElement{ itemName: "Edit State..." }
+                }
+                onSelectItem: console.log("Combobox Select Item: " + item )
+                onEditItem: console.log("Combobox Edit Item: " + item )
+                colorItem: "black"
+                colorSelect: "yellow"
+                color: "gray"
+            }
         }
         Rectangle {
             width: 1000;
